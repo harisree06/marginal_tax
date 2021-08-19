@@ -1,14 +1,17 @@
 class Tax 
    include ActiveModel::Model, ApiServices, ActiveModel::Serializers::JSON
 
-
     attr_accessor :annual_income, :tax_year, :rate, :tax_estimate
 
-    validates :annual_income, numericality: { only_integer: true , 
-    message: "annual income should be of type number" }, presence: true
+    validates :annual_income, 
+    numericality: { only_integer: true , 
+    message: "annual income should be of type number" }, 
+    presence: true
 
-    validates :tax_year, numericality: { only_integer: true , 
-        message: "tax year should be of type number" }, presence: true
+    validates :tax_year, 
+    numericality: { only_integer: true , 
+    message: "tax year should be of type number" }, 
+    presence: true
 
     validates_with TaxValidator
 

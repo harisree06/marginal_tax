@@ -3,6 +3,6 @@ class ApplicationController < ActionController::API
 
     private
     def deny_access
-        render json: {message: "Insufficient information / Service Unavailable", status: "Error"}
+        render json: {message: "Insufficient information / Service Unavailable", status: "Error"}, status: 500
     end
 end

@@ -1,6 +1,7 @@
 module TaxCalculator::Api::V1
     class TaxesController < ApplicationController
-        include ApiServices
+       
+
         def calculate
             @tax = Tax.create(tax_params)
             if @tax.valid?
@@ -8,7 +9,7 @@ module TaxCalculator::Api::V1
                     @tax.estimate_tax
                  render json: {info: @tax.as_json, status: "Success"}
             else  
-                render json: {message: @tax.errors.messages, status: "Error"}
+                render json: {message: @tax.errors.messages, status: "Error"}, status: 400
             end
         end
     
