@@ -42,6 +42,7 @@ On successful request the following response is generated
 
 # Testing API
 
+Unit testing to cover the value validation of payload is defined using Rails ActiveSupport::TestCase
 
 
 
